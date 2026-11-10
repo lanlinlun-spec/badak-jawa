@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Badak Jawa: Penjaga Terakhir Ujung Kulon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<style>
+:root{--grass:#5d9b3a;--grass2:#4a7f2c;--dirt:#7a5230;--dirt2:#5e3d22;--stone:#8b8b8b;--panel:#c6c6c6;--ink:#2b2b2b;--night:#1d1a16;--gold:#f2c230;--red:#b8342b;
+--h:'Press Start 2P','Courier New',monospace;--b:'VT323','Courier New',monospace}
+*{box-sizing:border-box}html{scroll-padding-top:90px}
+body{margin:0;font-family:var(--b);font-size:22px;line-height:1.35;color:var(--ink);background:var(--dirt2);
+background-image:linear-gradient(45deg,#0002 25%,transparent 25%,transparent 75%,#0002 75%),linear-gradient(45deg,#0002 25%,transparent 25%,transparent 75%,#0002 75%);background-size:32px 32px;background-position:0 0,16px 16px;
+padding-top:calc(76px + env(safe-area-inset-top,0px));padding-bottom:env(safe-area-inset-bottom,0px)}
+h1,h2,h3{font-family:var(--h);font-weight:400;line-height:1.5;margin:0 0 .8em}
+h1{font-size:clamp(20px,5vw,40px);color:#fff;text-shadow:4px 4px 0 #000a}h2{font-size:clamp(14px,3vw,20px)}h3{font-size:13px}
+a{color:#1a4fb0}p{margin:0 0 .8em;max-width:62ch}
+sup a{font-family:var(--h);font-size:9px;text-decoration:none;background:var(--ink);color:var(--gold);padding:1px 3px;margin-left:2px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:calc(8px + env(safe-area-inset-top,0px)) 8px 8px;background:#000c;display:flex;justify-content:center;gap:4px}
+nav a{flex:0 1 110px;min-width:0;text-decoration:none;color:#fff;text-align:center;background:#8b8b8b;border:4px solid;border-color:#c6c6c6 #373737 #373737 #c6c6c6;padding:4px 2px 2px;font-family:var(--h);font-size:8px;line-height:1.6;position:relative}
+nav a i{display:block;height:18px;margin:0 auto 4px;width:18px;box-shadow:inset -3px -3px #0004,inset 3px 3px #fff3}
+nav a.on{border-color:#fff;background:#6b6b6b;outline:3px solid #000}
+nav a b{position:absolute;right:3px;top:1px;font-weight:400;opacity:.8}
+main{max-width:1000px;margin:0 auto;padding:16px}
+.page{display:none}.page.on{display:block}
+.panel{background:var(--panel);border:6px solid;border-color:#fff #555 #555 #fff;outline:4px solid #000;margin:0 4px 28px;padding:20px 22px}
+.dark{background:var(--night);color:#e8e2d6;border-color:#555 #000 #000 #555}.dark a{color:#7db4ff}
+.hero{position:relative;margin:0 4px 28px;outline:4px solid #000;background:linear-gradient(#6fb8ff 0 62%,var(--grass) 62% 68%,var(--dirt) 68%);overflow:hidden;padding:40px 22px 0}
+.hero:before,.hero:after{content:"";position:absolute;top:26px;width:96px;height:28px;background:#fff;box-shadow:24px -16px #fff,48px 0 #fff;opacity:.9;animation:drift 40s linear infinite}
+.hero:after{top:70px;left:-200px;animation-duration:60s;transform:scale(.7)}.hero:before{left:-150px}
+@keyframes drift{to{transform:translateX(1400px)}}
+.hero h1,.hero p{position:relative;z-index:1}.hero p{color:#fff;text-shadow:2px 2px 0 #000a;font-size:26px}
+.frame{position:relative;z-index:1;background:#6b4a2a;border:8px solid #3c2813;outline:3px solid #000;padding:6px;margin:20px auto -2px;max-width:560px}
+.frame img{display:block;width:100%;image-rendering:auto}
+.frame small{display:block;font-size:19px;color:#f3e6c9;text-align:center;padding-top:4px}
+.btn{display:inline-block;font-family:var(--h);font-size:11px;text-decoration:none;color:#fff;background:#6b6b6b;border:4px solid;border-color:#c6c6c6 #333 #333 #c6c6c6;padding:12px 16px;margin:4px 6px 4px 0;cursor:pointer}
+.btn:hover,.btn:focus-visible{background:#5b7fd1;outline:3px solid #fff}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.stat{background:#fff3;border:4px solid #0003;padding:10px 12px}.stat b{display:block;font-family:var(--h);font-size:12px;margin-bottom:6px;color:var(--red)}
+.photos{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.photos figure{margin:0;background:#6b4a2a;border:6px solid #3c2813;padding:6px}.photos img{width:100%;display:block}
+.photos figcaption{color:#f3e6c9;font-size:20px;padding-top:4px}
+.iucn{display:flex;gap:4px;flex-wrap:wrap;margin:14px 0}.iucn span{flex:1 1 60px;text-align:center;font-family:var(--h);font-size:10px;color:#fff;padding:14px 4px;border:4px solid #0006;opacity:.45}
+.iucn .cr{opacity:1;outline:4px solid #000;transform:translateY(-6px);animation:pulse 1.6s steps(2) infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 6px var(--gold)}}
+table{border-collapse:collapse;width:100%;font-size:21px}td,th{border:3px solid #0005;padding:6px 8px;text-align:left;vertical-align:top}th{font-family:var(--h);font-size:10px;background:#0002}
+.hearts{font-family:var(--h);color:var(--red);letter-spacing:3px;font-size:16px}
+.map img{width:100%;display:block;border:4px solid #000;background:#fff}
+ol.ref{padding-left:30px}ol.ref li{margin-bottom:10px;word-break:break-word}
+footer{text-align:center;color:#d9cdb5;padding:10px 16px 40px;font-size:20px}
+#tr{position:fixed;inset:0;z-index:99;display:grid;grid-template-columns:repeat(10,1fr);grid-template-rows:repeat(8,1fr);pointer-events:none}
+#tr s{opacity:0;transition:opacity .22s steps(3)}
+@media(max-width:620px){body{font-size:21px}nav a{font-size:6px}nav a i{height:14px;width:14px}.panel{padding:16px 14px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}#tr{display:none}}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+</style></head><body>
+<nav id="nav" aria-label="Menu utama"></nav>
+<main>
+
+<section class="page" id="beranda">
+<div class="hero"><h1>Badak Jawa</h1><p>Penghuni terakhir hutan Ujung Kulon. Hanya ada di satu tempat di bumi.<sup><a href="#pustaka">6</a></sup></p>
+<a class="btn" href="#profil">Mulai Jelajah</a><a class="btn" href="#peta">Lihat Peta</a>
+<div class="frame"><img src="346008.jpg" alt="Badak jawa berjalan di antara semak dan bambu"><small>Badak jawa di hutan Ujung Kulon<sup><a href="#pustaka">13</a></sup></small></div></div>
+<div class="panel"><h2>Kenapa badak jawa?</h2>
+<p>Badak jawa (<i>Rhinoceros sondaicus</i>) pernah tersebar luas di Asia Selatan dan Asia Tenggara, tetapi sebagian besar wilayah jelajahnya hilang karena perburuan dan rusaknya habitat.<sup><a href="#pustaka">3</a></sup> Sekarang populasi liarnya hanya tersisa di Taman Nasional Ujung Kulon, Banten.<sup><a href="#pustaka">3</a></sup></p>
+<div class="grid"><div class="stat"><b>Status IUCN</b>Critically Endangered (kritis)<sup><a href="#pustaka">1</a></sup><sup><a href="#pustaka">4</a></sup></div>
+<div class="stat"><b>Habitat</b>Hutan hujan dataran rendah di ujung barat Pulau Jawa<sup><a href="#pustaka">6</a></sup></div>
+<div class="stat"><b>Populasi</b>Kurang dari 80 individu menurut laporan pemerintah 2026<sup><a href="#pustaka">5</a></sup></div></div></div>
+<div class="panel dark"><h2>Galeri</h2><div class="photos">
+<figure><img src="346009.jpg" alt="Wajah badak jawa dari samping, terlihat cula dan kulit bersisik"><figcaption>Cula tunggal dan kulit berlipat khas badak jawa.<sup><a href="#pustaka">13</a></sup></figcaption></figure>
+<figure><img src="346010.jpg" alt="Badak jawa berendam di sungai"><figcaption>Badak jawa suka berendam dan berkubang.<sup><a href="#pustaka">2</a></sup><sup><a href="#pustaka">13</a></sup></figcaption></figure></div></div>
+</section>
+
+<section class="page" id="profil">
+<div class="panel"><h2>Profil Badak Jawa</h2>
+<table>
+<tr><th>Nama ilmiah</th><td><i>Rhinoceros sondaicus</i><sup><a href="#pustaka">1</a></sup></td></tr>
+<tr><th>Ciri fisik</th><td>Bercula satu, kulit tebal berlipat membentuk seperti perisai.<sup><a href="#pustaka">2</a></sup> Berat dewasa bisa mencapai sekitar 2.300 kg.<sup><a href="#pustaka">2</a></sup></td></tr>
+<tr><th>Makanan</th><td>Herbivora. Memakan daun, tunas, ranting, dan buah yang jatuh.<sup><a href="#pustaka">2</a></sup></td></tr>
+<tr><th>Perilaku</th><td>Hidup menyendiri, kecuali induk yang bersama anaknya.<sup><a href="#pustaka">2</a></sup></td></tr>
+<tr><th>Sebaran</th><td>Dulu juga ada di Vietnam, tetapi populasi di sana dinyatakan punah pada 2011.<sup><a href="#pustaka">7</a></sup></td></tr></table></div>
+<div class="panel"><h2>Habitat: Ujung Kulon</h2>
+<p>Semua badak jawa liar hidup di Taman Nasional Ujung Kulon di ujung barat Pulau Jawa.<sup><a href="#pustaka">6</a></sup> Kawasan ini ditetapkan sebagai Situs Warisan Dunia UNESCO.<sup><a href="#pustaka">10</a></sup></p>
+<p>Badak memanfaatkan hutan dataran rendah dan area dekat pesisir. Karena itu, populasi sangat rentan terhadap bencana alam. Tsunami yang menghantam Ujung Kulon pada Desember 2018 menunjukkan bahaya memusatkan satu populasi di satu kawasan.<sup><a href="#pustaka">3</a></sup></p>
+<p>Salah satu masalah habitat adalah tanaman langkap (<i>Arenga</i>) yang menutupi lantai hutan. Program pembersihan langkap terbukti menambah habitat layak dan memperbanyak tanaman pakan badak.<sup><a href="#pustaka">8</a></sup></p></div>
+<a class="btn" href="#iucn">Lanjut: Status IUCN</a></section>
+
+<section class="page" id="iucn">
+<div class="panel"><h2>Status IUCN</h2>
+<p>Badak jawa masuk kategori <b>Critically Endangered</b> (Kritis) dalam IUCN Red List, satu tingkat sebelum punah di alam liar.<sup><a href="#pustaka">1</a></sup><sup><a href="#pustaka">4</a></sup></p>
+<div class="iucn" role="img" aria-label="Skala IUCN, badak jawa berada di Critically Endangered"><span style="background:#2f7d32">LC</span><span style="background:#7a9a1f">NT</span><span style="background:#c9a100">VU</span><span style="background:#d9701a">EN</span><span class="cr" style="background:#b8342b">CR</span><span style="background:#555">EW</span><span style="background:#111">EX</span></div>
+<p>LC: Least Concern, NT: Near Threatened, VU: Vulnerable, EN: Endangered, CR: Critically Endangered, EW: Extinct in the Wild, EX: Extinct.<sup><a href="#pustaka">1</a></sup></p></div>
+<div class="panel"><h2>Berapa jumlahnya?</h2>
+<p class="hearts" aria-hidden="true">♥ ♥ ♥ ♥ ♥</p>
+<p>Angka populasi berbeda-beda tergantung sumber dan metode hitungnya.</p>
+<table><tr><th>Sumber</th><th>Perkiraan</th></tr>
+<tr><td>IUCN (minimum)<sup><a href="#pustaka">3</a></sup></td><td>sekitar 50 individu</td></tr>
+<tr><td>Laporan pemerintah, Antara 2026<sup><a href="#pustaka">5</a></sup></td><td>kurang dari 80 individu</td></tr>
+<tr><td>RRI, September 2026<sup><a href="#pustaka">4</a></sup></td><td>80 sampai 100 individu</td></tr>
+<tr><td>Estimasi awal tahun 1937<sup><a href="#pustaka">6</a></sup></td><td>20 sampai 25 individu</td></tr></table>
+<p style="margin-top:12px">Sebuah laporan investigasi juga mempertanyakan akurasi hitungan resmi dan menyebut adanya indikasi perburuan yang kembali sejak 2018.<sup><a href="#pustaka">9</a></sup> Kabar baiknya, kelahiran anak badak terus terpantau kamera jebak, termasuk pada Januari 2026.<sup><a href="#pustaka">5</a></sup></p></div>
+<a class="btn" href="#peta">Lanjut: Peta Habitat</a></section>
+
+<section class="page" id="peta">
+<div class="panel map"><h2>Peta Lokasi Habitat</h2>
+<img src="348679.jpg" alt="Layout peta lokasi habitat badak jawa di Taman Nasional Ujung Kulon, dibuat Kelompok 8 SMA Negeri 24 Bandung">
+<p style="margin-top:14px">Peta dibuat dengan Google My Maps dan dilengkapi judul, arah mata angin, legenda, serta sumber. Citra satelit berasal dari Airbus, CNES, dan Maxar Technologies.<sup><a href="#pustaka">12</a></sup></p>
+<p>Taman Nasional Ujung Kulon berada di ujung barat Pulau Jawa, Provinsi Banten.<sup><a href="#pustaka">10</a></sup> Di sinilah satu-satunya populasi liar badak jawa tersisa.<sup><a href="#pustaka">3</a></sup></p></div>
+<a class="btn" href="#lestari">Lanjut: Pelestarian</a></section>
+
+<section class="page" id="lestari">
+<div class="panel"><h2>Ancaman</h2>
+<p>Ancaman utamanya adalah populasi yang sangat kecil dan hanya berada di satu kawasan, sehingga satu bencana alam bisa berdampak besar.<sup><a href="#pustaka">3</a></sup> Perburuan juga tetap menjadi kekhawatiran.<sup><a href="#pustaka">9</a></sup> Keragaman genetik yang rendah menjadi perhatian peneliti dan pengelola kawasan.<sup><a href="#pustaka">11</a></sup></p></div>
+<div class="panel"><h2>Strategi Pelestarian</h2><div class="grid">
+<div class="stat"><b>Patroli RPU</b>Rhino Protection Unit menjaga kawasan dan dinilai berperan menstabilkan populasi.<sup><a href="#pustaka">8</a></sup></div>
+<div class="stat"><b>Kamera jebak</b>Ratusan kamera dipasang untuk memantau badak, termasuk kelahiran, juga aktivitas manusia di dalam habitat.<sup><a href="#pustaka">7</a></sup></div>
+<div class="stat"><b>Perbaikan habitat</b>Pembersihan langkap membuka ruang jelajah dan menambah pakan.<sup><a href="#pustaka">8</a></sup></div>
+<div class="stat"><b>Habitat kedua</b>Memusatkan populasi di satu tempat berisiko, sehingga diperlukan lokasi tambahan. Saat ini individu badak mulai dipindahkan antar area di Ujung Kulon untuk mengelola genetik populasi kecil.<sup><a href="#pustaka">3</a></sup></div>
+<div class="stat"><b>Biobank</b>Pemerintah berencana menyimpan sperma dan sel telur badak jawa untuk membantu reproduksi.<sup><a href="#pustaka">5</a></sup></div>
+<div class="stat"><b>Transparansi data</b>Para pegiat meminta metode sensus yang lebih akurat dan pelaporan terbuka.<sup><a href="#pustaka">9</a></sup></div></div></div>
+<div class="panel dark"><h2>Apa yang bisa kita lakukan?</h2><p>Sebarkan informasi yang benar tentang badak jawa, dukung lembaga konservasi yang kredibel, dan jangan membeli produk satwa liar. Langkah kecil dari pelajar tetap berarti bagi penyadartahuan publik.</p></div>
+<a class="btn" href="#pustaka">Lihat Daftar Pustaka</a></section>
+
+<section class="page" id="pustaka">
+<div class="panel"><h2>Daftar Pustaka</h2>
+<ol class="ref" id="refs">
+<li>IUCN Red List, <i>Rhinoceros sondaicus</i>. <a href="https://www.iucnredlist.org/species/19495/18493900">iucnredlist.org</a></li>
+<li>WWF, Javan Rhino. <a href="https://www.worldwildlife.org/species/javan-rhino">worldwildlife.org</a></li>
+<li>Mongabay, “Javan rhinos survive eruption in Indonesia, but single habitat leaves species vulnerable”, 11 September 2026. <a href="https://news.mongabay.com/2026/09/javan-rhinos-survive-eruption-in-indonesia-but-single-habitat-leaves-species-vulnerable/">mongabay.com</a></li>
+<li>RRI Voice of Indonesia, “World Rhino Day, Javan and Sumatran Rhinos Remain Critically Endangered”, 22 September 2026. <a href="https://rri.co.id/voice-of-indonesia/environment/2750311/world-rhino-day-javan-and-sumatran-rhinos-remain-critically-endangered">rri.co.id</a></li>
+<li>ANTARA, laporan kelahiran anak badak jawa di Ujung Kulon, 2026. <a href="https://en.antaranews.com/news/402946/homepage-v2.html">antaranews.com</a></li>
+<li>World Economic Forum, “Why saving Javan rhinos from extinction starts with simple maths”. <a href="https://www.weforum.org/stories/nature-and-biodiversity/why-saving-javan-rhinos-from-extinction-starts-with-simple-maths/">weforum.org</a></li>
+<li>WWF Singapore, “Javan rhinos now safer under closer scrutiny”. <a href="https://www.wwf.sg/javan-rhinos-now-safer-under-closer-scrutiny">wwf.sg</a></li>
+<li>IBNS, “Javan rhino increases to 72 in latest count”. <a href="https://www.indiablooms.com/health/javan-rhino-increases-to-72-in-latest-count/details">indiablooms.com</a></li>
+<li>Eco-Business, “‘Misleading’ population count of Javan rhinos could chart their extinction”. <a href="https://www.eco-business.com/news/misleading-population-count-of-javan-rhinos-could-chart-their-extinction">eco-business.com</a></li>
+<li>UNESCO World Heritage Centre, Ujung Kulon National Park. <a href="https://whc.unesco.org/en/list/608">whc.unesco.org</a></li>
+<li>RRI Voice of Indonesia, “World Rhino Day Brings Hope to Ujung Kulon”, 22 September 2026. <a href="https://rri.co.id/voice-of-indonesia/environment/2748784/world-rhino-day-brings-hope-to-ujung-kulon">rri.co.id</a></li>
+<li>Peta lokasi: Kementerian Kehutanan, KSDAE, UNESCO. Citra satelit ©2026 Airbus, CNES / Airbus, Maxar Technologies via Google My Maps.</li>
+<li>Foto badak jawa: GANTI DENGAN SUMBER ASLI FOTO (nama situs/fotografer dan tanggal akses).</li>
+</ol></div></section>
+</main>
+<footer>Dibuat oleh Kelompok 8, SMA Negeri 24 Bandung</footer>
+<div id="tr" aria-hidden="true"></div>
+<script>
+const P=[['beranda','Beranda','#5d9b3a'],['profil','Profil','#7a5230'],['iucn','IUCN','#b8342b'],['peta','Peta','#3a7bd5'],['lestari','Lestari','#2f7d32'],['pustaka','Pustaka','#c9a100']];
+const nav=document.getElementById('nav'),tr=document.getElementById('tr');
+P.forEach((p,i)=>{nav.insertAdjacentHTML('beforeend',`<a href="#${p[0]}" data-p="${p[0]}"><b>${i+1}</b><i style="background:${p[2]}"></i>${p[1]}</a>`)});
+const cols=['#7a5230','#5e3d22','#8b8b8b','#5d9b3a','#6b6b6b','#4a7f2c'];
+for(let i=0;i<80;i++){const s=document.createElement('s');s.style.background=cols[Math.random()*cols.length|0];tr.appendChild(s)}
+const cells=[...tr.children];let cur=null,busy=false;
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function show(id){document.querySelectorAll('.page').forEach(e=>e.classList.toggle('on',e.id===id));
+nav.querySelectorAll('a').forEach(a=>a.classList.toggle('on',a.dataset.p===id));scrollTo(0,0);cur=id;
+document.title=(P.find(p=>p[0]===id)||P[0])[1]+' | Badak Jawa'}
+function go(){const id=P.some(p=>p[0]===location.hash.slice(1))?location.hash.slice(1):'beranda';
+if(id===cur)return;if(cur===null||rm){show(id);return}
+if(busy)return;busy=true;
+cells.forEach(c=>{c.style.transitionDelay=(Math.random()*280|0)+'ms';c.style.opacity=1});
+setTimeout(()=>{show(id);cells.forEach(c=>{c.style.transitionDelay=(Math.random()*280|0)+'ms';c.style.opacity=0});
+setTimeout(()=>busy=false,520)},560)}
+addEventListener('hashchange',go);go();
+</script></body></html>
