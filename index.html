@@ -16,7 +16,7 @@ h1{font-size:clamp(20px,5vw,40px);color:#fff;text-shadow:4px 4px 0 #000a}h2{font
 a{color:#1a4fb0}p{margin:0 0 .8em;max-width:62ch}
 sup a{font-family:var(--h);font-size:9px;text-decoration:none;background:var(--ink);color:var(--gold);padding:1px 3px;margin-left:2px}
 nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:calc(8px + env(safe-area-inset-top,0px)) 8px 8px;background:#000c;display:flex;justify-content:center;gap:4px}
-nav a{flex:0 1 110px;min-width:0;text-decoration:none;color:#fff;text-align:center;background:#8b8b8b;border:4px solid;border-color:#c6c6c6 #373737 #373737 #c6c6c6;padding:4px 2px 2px;font-family:var(--h);font-size:8px;line-height:1.6;position:relative}
+nav a{flex:1 1 0;max-width:110px;min-width:0;text-decoration:none;color:#fff;text-align:center;background:#8b8b8b;border:4px solid;border-color:#c6c6c6 #373737 #373737 #c6c6c6;padding:4px 2px 2px;font-family:var(--h);font-size:8px;line-height:1.6;position:relative;overflow:hidden}
 nav a i{display:block;height:18px;margin:0 auto 4px;width:18px;box-shadow:inset -3px -3px #0004,inset 3px 3px #fff3}
 nav a.on{border-color:#fff;background:#6b6b6b;outline:3px solid #000}
 nav a b{position:absolute;right:3px;top:1px;font-weight:400;opacity:.8}
@@ -45,11 +45,18 @@ main{max-width:1000px;margin:0 auto;padding:16px}
 table{border-collapse:collapse;width:100%;font-size:21px}td,th{border:3px solid #0005;padding:6px 8px;text-align:left;vertical-align:top}th{font-family:var(--h);font-size:10px;background:#0002}
 .hearts{font-family:var(--h);color:var(--red);letter-spacing:3px;font-size:16px}
 .map img{width:100%;display:block;border:4px solid #000;background:#fff}
+.team{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.member{display:flex;gap:14px;align-items:center;background:#fff3;border:4px solid #0003;padding:12px}
+.av{flex:0 0 64px;height:64px;display:flex;align-items:center;justify-content:center;font-family:var(--h);font-size:16px;color:#fff;border:4px solid;border-color:#fff6 #0006 #0006 #fff6;box-shadow:inset -6px -6px #0003,inset 6px 6px #fff2}
+.member b{display:block;font-family:var(--h);font-size:11px;line-height:1.6;margin-bottom:4px}
+.member span{font-size:20px}
+.quote{border-left:10px solid var(--grass);background:#0002;padding:12px 16px;margin:0 0 14px;font-size:24px}
+.quote cite{display:block;font-size:19px;opacity:.8;margin-top:4px;font-style:normal}
 ol.ref{padding-left:30px}ol.ref li{margin-bottom:10px;word-break:break-word}
 footer{text-align:center;color:#d9cdb5;padding:10px 16px 40px;font-size:20px}
 #tr{position:fixed;inset:0;z-index:99;display:grid;grid-template-columns:repeat(10,1fr);grid-template-rows:repeat(8,1fr);pointer-events:none}
 #tr s{opacity:0;transition:opacity .22s steps(3)}
-@media(max-width:620px){body{font-size:21px}nav a{font-size:6px}nav a i{height:14px;width:14px}.panel{padding:16px 14px}}
+@media(max-width:620px){body{font-size:21px}nav{gap:3px;padding-left:4px;padding-right:4px}nav a{font-size:5px;border-width:3px}nav a i{height:14px;width:14px}nav a b{display:none}.panel{padding:16px 14px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important}#tr{display:none}}
 :focus-visible{outline:3px solid var(--gold);outline-offset:2px}
 </style></head><body>
@@ -118,7 +125,24 @@ footer{text-align:center;color:#d9cdb5;padding:10px 16px 40px;font-size:20px}
 <div class="stat"><b>Biobank</b>Pemerintah berencana menyimpan sperma dan sel telur badak jawa untuk membantu reproduksi.<sup><a href="#pustaka">5</a></sup></div>
 <div class="stat"><b>Transparansi data</b>Para pegiat meminta metode sensus yang lebih akurat dan pelaporan terbuka.<sup><a href="#pustaka">9</a></sup></div></div></div>
 <div class="panel dark"><h2>Apa yang bisa kita lakukan?</h2><p>Sebarkan informasi yang benar tentang badak jawa, dukung lembaga konservasi yang kredibel, dan jangan membeli produk satwa liar. Langkah kecil dari pelajar tetap berarti bagi penyadartahuan publik.</p></div>
-<a class="btn" href="#pustaka">Lihat Daftar Pustaka</a></section>
+<div class="panel"><h2>Kutipan</h2>
+<div class="quote">“Badak jawa tidak bisa meminta tolong, jadi kitalah yang harus bersuara untuknya.”<cite>Kelompok 8</cite></div>
+<div class="quote">“Satu badak yang selamat hari ini adalah harapan bagi generasi berikutnya.”<cite>Kelompok 8</cite></div></div>
+<a class="btn" href="#tim">Kenalan Sama Tim</a><a class="btn" href="#pustaka">Lihat Daftar Pustaka</a></section>
+
+<section class="page" id="tim">
+<div class="panel"><h2>Kenalan Sama Tim</h2>
+<p>Website ini dibuat oleh Kelompok 8 SMA Negeri 24 Bandung untuk mengenalkan badak jawa dan upaya pelestariannya.</p>
+<div class="team">
+<div class="member"><div class="av" style="background:#5d9b3a">AM</div><div><b>Annisa Maya Pratama</b><span>Absen 5</span></div></div>
+<div class="member"><div class="av" style="background:#3a7bd5">BA</div><div><b>Bill Erlangga Agasi</b><span>Absen 10</span></div></div>
+<div class="member"><div class="av" style="background:#b8342b">BT</div><div><b>Bunga Tiara</b><span>Absen 11</span></div></div>
+<div class="member"><div class="av" style="background:#8a4fd0">DZ</div><div><b>Dewi Zia Zahara</b><span>Absen 13</span></div></div>
+<div class="member"><div class="av" style="background:#d9701a">HA</div><div><b>Hizkia Anshor Zaelani</b><span>Absen 20</span></div></div>
+<div class="member"><div class="av" style="background:#2f7d80">KA</div><div><b>Kanaya Albani</b><span>Absen 21</span></div></div>
+</div></div>
+<div class="panel dark"><div class="quote">“Menjaga badak jawa berarti menjaga hutan yang menjadi rumah terakhirnya.”<cite>Kelompok 8</cite></div></div>
+</section>
 
 <section class="page" id="pustaka">
 <div class="panel"><h2>Daftar Pustaka</h2>
@@ -135,13 +159,13 @@ footer{text-align:center;color:#d9cdb5;padding:10px 16px 40px;font-size:20px}
 <li>UNESCO World Heritage Centre, Ujung Kulon National Park. <a href="https://whc.unesco.org/en/list/608">whc.unesco.org</a></li>
 <li>RRI Voice of Indonesia, “World Rhino Day Brings Hope to Ujung Kulon”, 22 September 2026. <a href="https://rri.co.id/voice-of-indonesia/environment/2748784/world-rhino-day-brings-hope-to-ujung-kulon">rri.co.id</a></li>
 <li>Peta lokasi: Kementerian Kehutanan, KSDAE, UNESCO. Citra satelit ©2026 Airbus, CNES / Airbus, Maxar Technologies via Google My Maps.</li>
-<li>Foto badak jawa: ujungjulonnet dan KSDAE.</li>
+<li>Foto badak jawa: GANTI DENGAN SUMBER ASLI FOTO (nama situs/fotografer dan tanggal akses).</li>
 </ol></div></section>
 </main>
 <footer>Dibuat oleh Kelompok 8, SMA Negeri 24 Bandung</footer>
 <div id="tr" aria-hidden="true"></div>
 <script>
-const P=[['beranda','Beranda','#5d9b3a'],['profil','Profil','#7a5230'],['iucn','IUCN','#b8342b'],['peta','Peta','#3a7bd5'],['lestari','Lestari','#2f7d32'],['pustaka','Pustaka','#c9a100']];
+const P=[['beranda','Beranda','#5d9b3a'],['profil','Profil','#7a5230'],['iucn','IUCN','#b8342b'],['peta','Peta','#3a7bd5'],['lestari','Lestari','#2f7d32'],['tim','Tim','#8a4fd0'],['pustaka','Pustaka','#c9a100']];
 const nav=document.getElementById('nav'),tr=document.getElementById('tr');
 P.forEach((p,i)=>{nav.insertAdjacentHTML('beforeend',`<a href="#${p[0]}" data-p="${p[0]}"><b>${i+1}</b><i style="background:${p[2]}"></i>${p[1]}</a>`)});
 const cols=['#7a5230','#5e3d22','#8b8b8b','#5d9b3a','#6b6b6b','#4a7f2c'];
@@ -152,10 +176,4 @@ function show(id){document.querySelectorAll('.page').forEach(e=>e.classList.togg
 nav.querySelectorAll('a').forEach(a=>a.classList.toggle('on',a.dataset.p===id));scrollTo(0,0);cur=id;
 document.title=(P.find(p=>p[0]===id)||P[0])[1]+' | Badak Jawa'}
 function go(){const id=P.some(p=>p[0]===location.hash.slice(1))?location.hash.slice(1):'beranda';
-if(id===cur)return;if(cur===null||rm){show(id);return}
-if(busy)return;busy=true;
-cells.forEach(c=>{c.style.transitionDelay=(Math.random()*280|0)+'ms';c.style.opacity=1});
-setTimeout(()=>{show(id);cells.forEach(c=>{c.style.transitionDelay=(Math.random()*280|0)+'ms';c.style.opacity=0});
-setTimeout(()=>busy=false,520)},560)}
-addEventListener('hashchange',go);go();
-</script></body></html>
+if(id===cur)return;if(cur===null||r
