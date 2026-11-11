@@ -160,4 +160,32 @@ footer{text-align:center;color:#d9cdb5;padding:10px 16px 40px;font-size:20px}
 <li>World Economic Forum, “Why saving Javan rhinos from extinction starts with simple maths”. <a href="https://www.weforum.org/stories/nature-and-biodiversity/why-saving-javan-rhinos-from-extinction-starts-with-simple-maths/">weforum.org</a></li>
 <li>WWF Singapore, “Javan rhinos now safer under closer scrutiny”. <a href="https://www.wwf.sg/javan-rhinos-now-safer-under-closer-scrutiny">wwf.sg</a></li>
 <li>IBNS, “Javan rhino increases to 72 in latest count”. <a href="https://www.indiablooms.com/health/javan-rhino-increases-to-72-in-latest-count/details">indiablooms.com</a></li>
-<li>Eco-Business, “‘Misl
+<li>Eco-Business, “‘Misleading’ population count of Javan rhinos could chart their extinction”. <a href="https://www.eco-business.com/news/misleading-population-count-of-javan-rhinos-could-chart-their-extinction">eco-business.com</a></li>
+<li>UNESCO World Heritage Centre, Ujung Kulon National Park. <a href="https://whc.unesco.org/en/list/608">whc.unesco.org</a></li>
+<li>RRI Voice of Indonesia, “World Rhino Day Brings Hope to Ujung Kulon”, 22 September 2026. <a href="https://rri.co.id/voice-of-indonesia/environment/2748784/world-rhino-day-brings-hope-to-ujung-kulon">rri.co.id</a></li>
+<li>Peta lokasi: Kementerian Kehutanan, KSDAE, UNESCO. Citra satelit ©2026 Airbus, CNES / Airbus, Maxar Technologies via Google My Maps.</li>
+<li>Foto badak jawa: ujungjulonnet dan KSDAE, diakses 11 November 2026.</li>
+</ol></div></section>
+</main>
+<footer>Dibuat oleh Kelompok 8, SMA Negeri 24 Bandung</footer>
+<div id="tr" aria-hidden="true"></div>
+<script>
+const P=[['beranda','Beranda','#5d9b3a'],['profil','Profil','#7a5230'],['iucn','IUCN','#b8342b'],['peta','Peta','#3a7bd5'],['lestari','Lestari','#2f7d32'],['tim','Tim','#8a4fd0'],['pustaka','Pustaka','#c9a100']];
+const nav=document.getElementById('nav'),tr=document.getElementById('tr');
+P.forEach((p,i)=>{nav.insertAdjacentHTML('beforeend',`<a href="#${p[0]}" data-p="${p[0]}"><b>${i+1}</b><i style="background:${p[2]}"></i>${p[1]}</a>`)});
+const cols=['#7a5230','#5e3d22','#8b8b8b','#5d9b3a','#6b6b6b','#4a7f2c'];
+for(let i=0;i<80;i++){const s=document.createElement('s');s.style.background=cols[Math.random()*cols.length|0];tr.appendChild(s)}
+const cells=[...tr.children];let cur=null,busy=false;
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function show(id){document.querySelectorAll('.page').forEach(e=>e.classList.toggle('on',e.id===id));
+nav.querySelectorAll('a').forEach(a=>a.classList.toggle('on',a.dataset.p===id));scrollTo(0,0);cur=id;
+document.title=(P.find(p=>p[0]===id)||P[0])[1]+' | Badak Jawa'}
+function go(){const id=P.some(p=>p[0]===location.hash.slice(1))?location.hash.slice(1):'beranda';
+if(id===cur)return;if(cur===null||rm){show(id);return}
+if(busy)return;busy=true;
+cells.forEach(c=>{c.style.transitionDelay=(Math.random()*280|0)+'ms';c.style.opacity=1});
+setTimeout(()=>{show(id);cells.forEach(c=>{c.style.transitionDelay=(Math.random()*280|0)+'ms';c.style.opacity=0});
+setTimeout(()=>busy=false,520)},560)}
+addEventListener('hashchange',go);go();
+document.querySelectorAll('.qbtn').forEach(b=>b.addEventListener('click',()=>{const m=b.closest('.member');const o=m.classList.toggle('open');b.setAttribute('aria-expanded',o);b.textContent=o?'Tutup Quote':'Lihat Quote'}));
+</script></body></html>
