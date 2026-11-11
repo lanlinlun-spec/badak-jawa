@@ -46,10 +46,15 @@ table{border-collapse:collapse;width:100%;font-size:21px}td,th{border:3px solid 
 .hearts{font-family:var(--h);color:var(--red);letter-spacing:3px;font-size:16px}
 .map img{width:100%;display:block;border:4px solid #000;background:#fff}
 .team{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.member{display:flex;gap:14px;align-items:center;background:#fff3;border:4px solid #0003;padding:12px}
-.av{flex:0 0 64px;height:64px;display:flex;align-items:center;justify-content:center;font-family:var(--h);font-size:16px;color:#fff;border:4px solid;border-color:#fff6 #0006 #0006 #fff6;box-shadow:inset -6px -6px #0003,inset 6px 6px #fff2}
+.member{display:flex;flex-wrap:wrap;gap:14px;align-items:center;background:#fff3;border:4px solid #0003;padding:12px}
+.av{flex:0 0 64px;height:64px;display:flex;align-items:center;justify-content:center;font-family:var(--h);font-size:16px;color:#fff;border:4px solid;border-color:#fff6 #0006 #0006 #fff6;box-shadow:inset -6px -6px #0003,inset 6px 6px #fff2;overflow:hidden;position:relative}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .member b{display:block;font-family:var(--h);font-size:11px;line-height:1.6;margin-bottom:4px}
 .member span{font-size:20px}
+.qbtn{font-family:var(--h);font-size:9px;color:#fff;background:#6b6b6b;border:3px solid;border-color:#c6c6c6 #333 #333 #c6c6c6;padding:8px 10px;margin-top:8px;cursor:pointer}
+.qbtn:hover,.qbtn:focus-visible{background:#5b7fd1}
+.mq{flex:1 1 100%;display:none;margin:0;max-width:none;background:#0002;border-left:8px solid var(--grass);padding:8px 12px;font-size:21px}
+.member.open .mq{display:block}
 .quote{border-left:10px solid var(--grass);background:#0002;padding:12px 16px;margin:0 0 14px;font-size:24px}
 .quote cite{display:block;font-size:19px;opacity:.8;margin-top:4px;font-style:normal}
 ol.ref{padding-left:30px}ol.ref li{margin-bottom:10px;word-break:break-word}
@@ -134,12 +139,12 @@ footer{text-align:center;color:#d9cdb5;padding:10px 16px 40px;font-size:20px}
 <div class="panel"><h2>Kenalan Sama Tim</h2>
 <p>Website ini dibuat oleh Kelompok 8 SMA Negeri 24 Bandung untuk mengenalkan badak jawa dan upaya pelestariannya.</p>
 <div class="team">
-<div class="member"><div class="av" style="background:#5d9b3a">AM</div><div><b>Annisa Maya Pratama</b><span>Absen 5</span></div></div>
-<div class="member"><div class="av" style="background:#3a7bd5">BA</div><div><b>Bill Erlangga Agasi</b><span>Absen 10</span></div></div>
-<div class="member"><div class="av" style="background:#b8342b">BT</div><div><b>Bunga Tiara</b><span>Absen 11</span></div></div>
-<div class="member"><div class="av" style="background:#8a4fd0">DZ</div><div><b>Dewi Zia Zahara</b><span>Absen 13</span></div></div>
-<div class="member"><div class="av" style="background:#d9701a">HA</div><div><b>Hizkia Anshor Zaelani</b><span>Absen 20</span></div></div>
-<div class="member"><div class="av" style="background:#2f7d80">KA</div><div><b>Kanaya Albani</b><span>Absen 21</span></div></div>
+<div class="member"><div class="av" style="background:#5d9b3a">AM<img src="annisa.jpg" alt="Foto Annisa Maya Pratama" onerror="this.style.display='none'"></div><div><b>Annisa Maya Pratama</b><span>Absen 5</span><br><button class="qbtn" type="button" aria-expanded="false">Lihat Quote</button></div><p class="mq">“Kalau bukan kita yang peduli, siapa lagi yang menjaga rumah satwa langka?”</p></div>
+<div class="member"><div class="av" style="background:#3a7bd5">BA<img src="bill.jpg" alt="Foto Bill Erlangga Agasi" onerror="this.style.display='none'"></div><div><b>Bill Erlangga Agasi</b><span>Absen 10</span><br><button class="qbtn" type="button" aria-expanded="false">Lihat Quote</button></div><p class="mq">“Melestarikan satwa itu bukan tugas satu orang, tapi kebiasaan kecil yang dilakukan bersama.”</p></div>
+<div class="member"><div class="av" style="background:#b8342b">BT<img src="bunga.jpg" alt="Foto Bunga Tiara" onerror="this.style.display='none'"></div><div><b>Bunga Tiara</b><span>Absen 11</span><br><button class="qbtn" type="button" aria-expanded="false">Lihat Quote</button></div><p class="mq">“Hutan yang terjaga adalah masa depan yang masih bisa kita wariskan.”</p></div>
+<div class="member"><div class="av" style="background:#8a4fd0">DZ<img src="dewi.jpg" alt="Foto Dewi Zia Zahara" onerror="this.style.display='none'"></div><div><b>Dewi Zia Zahara</b><span>Absen 13</span><br><button class="qbtn" type="button" aria-expanded="false">Lihat Quote</button></div><p class="mq">“Setiap badak yang bertahan hidup adalah bukti bahwa usaha kecil tetap berarti.”</p></div>
+<div class="member"><div class="av" style="background:#d9701a">HA<img src="hizkia.jpg" alt="Foto Hizkia Anshor Zaelani" onerror="this.style.display='none'"></div><div><b>Hizkia Anshor Zaelani</b><span>Absen 20</span><br><button class="qbtn" type="button" aria-expanded="false">Lihat Quote</button></div><p class="mq">“Mengenal satwa langka dimulai dari rasa ingin tahu, lalu berubah jadi rasa ingin melindungi.”</p></div>
+<div class="member"><div class="av" style="background:#2f7d80">KA<img src="kanaya.jpg" alt="Foto Kanaya Albani" onerror="this.style.display='none'"></div><div><b>Kanaya Albani</b><span>Absen 21</span><br><button class="qbtn" type="button" aria-expanded="false">Lihat Quote</button></div><p class="mq">“Alam tidak butuh kita, tapi kitalah yang butuh alam untuk tetap hidup.”</p></div>
 </div></div>
 <div class="panel dark"><div class="quote">“Menjaga badak jawa berarti menjaga hutan yang menjadi rumah terakhirnya.”<cite>Kelompok 8</cite></div></div>
 </section>
@@ -155,31 +160,4 @@ footer{text-align:center;color:#d9cdb5;padding:10px 16px 40px;font-size:20px}
 <li>World Economic Forum, “Why saving Javan rhinos from extinction starts with simple maths”. <a href="https://www.weforum.org/stories/nature-and-biodiversity/why-saving-javan-rhinos-from-extinction-starts-with-simple-maths/">weforum.org</a></li>
 <li>WWF Singapore, “Javan rhinos now safer under closer scrutiny”. <a href="https://www.wwf.sg/javan-rhinos-now-safer-under-closer-scrutiny">wwf.sg</a></li>
 <li>IBNS, “Javan rhino increases to 72 in latest count”. <a href="https://www.indiablooms.com/health/javan-rhino-increases-to-72-in-latest-count/details">indiablooms.com</a></li>
-<li>Eco-Business, “‘Misleading’ population count of Javan rhinos could chart their extinction”. <a href="https://www.eco-business.com/news/misleading-population-count-of-javan-rhinos-could-chart-their-extinction">eco-business.com</a></li>
-<li>UNESCO World Heritage Centre, Ujung Kulon National Park. <a href="https://whc.unesco.org/en/list/608">whc.unesco.org</a></li>
-<li>RRI Voice of Indonesia, “World Rhino Day Brings Hope to Ujung Kulon”, 22 September 2026. <a href="https://rri.co.id/voice-of-indonesia/environment/2748784/world-rhino-day-brings-hope-to-ujung-kulon">rri.co.id</a></li>
-<li>Peta lokasi: Kementerian Kehutanan, KSDAE, UNESCO. Citra satelit ©2026 Airbus, CNES / Airbus, Maxar Technologies via Google My Maps.</li>
-<li>Foto badak jawa: UjungKulonNet dan KSDAE.</li>
-</ol></div></section>
-</main>
-<footer>Dibuat oleh Kelompok 8, SMA Negeri 24 Bandung</footer>
-<div id="tr" aria-hidden="true"></div>
-<script>
-const P=[['beranda','Beranda','#5d9b3a'],['profil','Profil','#7a5230'],['iucn','IUCN','#b8342b'],['peta','Peta','#3a7bd5'],['lestari','Lestari','#2f7d32'],['tim','Tim','#8a4fd0'],['pustaka','Pustaka','#c9a100']];
-const nav=document.getElementById('nav'),tr=document.getElementById('tr');
-P.forEach((p,i)=>{nav.insertAdjacentHTML('beforeend',`<a href="#${p[0]}" data-p="${p[0]}"><b>${i+1}</b><i style="background:${p[2]}"></i>${p[1]}</a>`)});
-const cols=['#7a5230','#5e3d22','#8b8b8b','#5d9b3a','#6b6b6b','#4a7f2c'];
-for(let i=0;i<80;i++){const s=document.createElement('s');s.style.background=cols[Math.random()*cols.length|0];tr.appendChild(s)}
-const cells=[...tr.children];let cur=null,busy=false;
-const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
-function show(id){document.querySelectorAll('.page').forEach(e=>e.classList.toggle('on',e.id===id));
-nav.querySelectorAll('a').forEach(a=>a.classList.toggle('on',a.dataset.p===id));scrollTo(0,0);cur=id;
-document.title=(P.find(p=>p[0]===id)||P[0])[1]+' | Badak Jawa'}
-function go(){const id=P.some(p=>p[0]===location.hash.slice(1))?location.hash.slice(1):'beranda';
-if(id===cur)return;if(cur===null||rm){show(id);return}
-if(busy)return;busy=true;
-cells.forEach(c=>{c.style.transitionDelay=(Math.random()*280|0)+'ms';c.style.opacity=1});
-setTimeout(()=>{show(id);cells.forEach(c=>{c.style.transitionDelay=(Math.random()*280|0)+'ms';c.style.opacity=0});
-setTimeout(()=>busy=false,520)},560)}
-addEventListener('hashchange',go);go();
-</script></body></html>
+<li>Eco-Business, “‘Misl
