@@ -159,7 +159,7 @@ footer{text-align:center;color:#d9cdb5;padding:10px 16px 40px;font-size:20px}
 <li>UNESCO World Heritage Centre, Ujung Kulon National Park. <a href="https://whc.unesco.org/en/list/608">whc.unesco.org</a></li>
 <li>RRI Voice of Indonesia, “World Rhino Day Brings Hope to Ujung Kulon”, 22 September 2026. <a href="https://rri.co.id/voice-of-indonesia/environment/2748784/world-rhino-day-brings-hope-to-ujung-kulon">rri.co.id</a></li>
 <li>Peta lokasi: Kementerian Kehutanan, KSDAE, UNESCO. Citra satelit ©2026 Airbus, CNES / Airbus, Maxar Technologies via Google My Maps.</li>
-<li>Foto badak jawa: GANTI DENGAN SUMBER ASLI FOTO (nama situs/fotografer dan tanggal akses).</li>
+<li>Foto badak jawa: UjungKulonNet dan KSDAE.</li>
 </ol></div></section>
 </main>
 <footer>Dibuat oleh Kelompok 8, SMA Negeri 24 Bandung</footer>
@@ -176,4 +176,10 @@ function show(id){document.querySelectorAll('.page').forEach(e=>e.classList.togg
 nav.querySelectorAll('a').forEach(a=>a.classList.toggle('on',a.dataset.p===id));scrollTo(0,0);cur=id;
 document.title=(P.find(p=>p[0]===id)||P[0])[1]+' | Badak Jawa'}
 function go(){const id=P.some(p=>p[0]===location.hash.slice(1))?location.hash.slice(1):'beranda';
-if(id===cur)return;if(cur===null||r
+if(id===cur)return;if(cur===null||rm){show(id);return}
+if(busy)return;busy=true;
+cells.forEach(c=>{c.style.transitionDelay=(Math.random()*280|0)+'ms';c.style.opacity=1});
+setTimeout(()=>{show(id);cells.forEach(c=>{c.style.transitionDelay=(Math.random()*280|0)+'ms';c.style.opacity=0});
+setTimeout(()=>busy=false,520)},560)}
+addEventListener('hashchange',go);go();
+</script></body></html>
